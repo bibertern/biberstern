@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="fr">
+<head>
+
+  <meta charset="utf-8">
+  <title>Soundboard</title>
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Eczar:800" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+          text-decoration: none;
+        }
+
+        body{
+            font-size: 24px;
+            font-family: 'Work Sans', sans-serif;
+            color: #1C297D;
+            text-align: center;
+        }
+
+        img {
+            width: 130px;
+            margin: 10px 0 0 10px;
+        }
+
+        h1  {
+          font-family: 'Eczar', serif;
+
+        }
+        h4 {
+          font-size: 12px;
+          font-weight: 400;
+        }
+        .container {
+            max-width: 720px;
+            margin: auto;
+            height: 840px;
+            margin-top: 100px;
+        }
+
+        #toggleInfos {
+          font-size: 16px;
+          text-transform: uppercase;
+          text-decoration: underline;
+          cursor: pointer;
+          margin: 70px 0;
+          display: block;
+        }
+
+        #infos {
+          display: none;
+          margin: 100px 0px;
+        }
+
+        #going, #not-going, #nc {
+          display: block;
+          width: 320px;
+          height: 64px;
+          border: 1px solid #1C297D;
+          color: #1C297D;
+          font-size: 24px;
+          text-align: center;
+          line-height: 64px;
+          margin: auto;
+          margin-bottom: 24px;
+        }
+
+        #going::before {
+          content:'Je viens';
+        }
+        #not-going::before {
+          content:'Je ne viens pas';
+        }
+        #nc::before {
+          content:'N.C*';🙅‍♂️
+        }
+        #not-going:hover {
+          cursor: pointer;
+        }
+        #not-going:hover::before {
+          content: "😱";
+        }
+        #nc:hover {
+          cursor: pointer;
+        }
+        #going:hover {
+          cursor: pointer;
+          animation: colorchange .5s infinite;
+          border: 1px solid transparent;
+        }
+        #going:hover::before {
+          content: "";
+          width: 50px;
+          height: 60px;
+          background:url("images/disco.gif") no-repeat 0 10px ;
+          background-size: 100%;
+          display: inline-block;
+        }
+
+
+        @keyframes colorchange
+        {
+          0%    {background: #FD8E8D;}
+          10%   {background: #FDD58E;}
+          20%   {background: #8CFD8E;}
+          30%   {background: #8CFFFE;}
+          40%   {background: #8D86FB;}
+          50%   {background: #D68FFC;}
+          60%   {background: #FD90FD;}
+          70%   {background: #FD6EF5;}
+          80%   {background: #FC6FB6;}
+          100%   {background: #FD6A6B;}
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Johanna & Lucas</h1>
+
+    <p>Samedi 3 février 2018<br>Portsall</p>
+
+    <a id="toggleInfos">VOIR LES INFOS</a>
+
+    <div id="infos">
+      <p>Venir</p>
+      <p>Dormir</p>
+      <p>Vomir</p>
+    </div>
+
+
+
+    <!-- Buttons -->
+    
+    <audio id="mysound" src="sounds/disco.mp3"></audio>
+    <a id="going" onmouseover="document.getElementById('mysound').play()" onmouseout="document.getElementById('mysound').pause(); mysound.currentTime = 0;" href="https://goo.gl/forms/JHH46L9tFvBxQvx92"></a>
+
+    <a id="not-going"></a>
+    <a id="nc"></a>
+
+
+
+
+    <h4>* Non concerné.é</h4>
+</div>
+
+<div id="wrap">&nbsp;</div>
+
+</body>
+
+
+<script src="js/jquery-3.1.1.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready( function() {
+
+    // Toggle Infos
+
+    $('#toggleInfos').click(function() {
+      $('#infos').slideToggle();
+    });
+
+
+
+});
+</script>
+
+</html>
