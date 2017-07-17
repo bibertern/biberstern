@@ -1,2 +1,2 @@
-# biberstern
+# bibertern
 Our wedding site
