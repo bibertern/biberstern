@@ -3,7 +3,7 @@
 <head>
 
   <meta charset="utf-8">
-  <title>Soundboard</title>
+  <title>Biberstern</title>
   <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Eczar:800" rel="stylesheet">
 
@@ -18,9 +18,9 @@
         }
 
         body{
-            font-size: 24px;
+            font-size: 3vw;
             font-family: 'Work Sans', sans-serif;
-            color: #1C297D;
+            color: #132073;
             text-align: center;
         }
 
@@ -30,18 +30,18 @@
         }
 
         h1  {
-          font-family: 'Eczar', serif;
-
+          padding-bottom: 40px;
+          font-weight: 500;
         }
         h4 {
-          font-size: 12px;
-          font-weight: 400;
+            font-size: 12px;
+            font-weight: 400;
+            position: fixed;
+            bottom: 16px;
+            left: 16px;
         }
         .container {
-            max-width: 720px;
-            margin: auto;
-            height: 840px;
-            margin-top: 100px;
+          margin: 80px auto;
         }
 
         #toggleInfos {
@@ -62,13 +62,15 @@
           display: block;
           width: 320px;
           height: 64px;
-          border: 1px solid #1C297D;
-          color: #1C297D;
-          font-size: 24px;
+          border: 2px solid #132073;
+          color: #132073;
+          font-size: 26px;
           text-align: center;
           line-height: 64px;
           margin: auto;
-          margin-bottom: 24px;
+          margin-bottom: 16px;
+          transition: 0.350s cubic-bezier(0.175, 1, 0.50, 1.275);
+          border-radius: 4px;
         }
 
         #going::before {
@@ -82,17 +84,32 @@
         }
         #not-going:hover {
           cursor: pointer;
+          transform: scale(1.1);
+        }
+        #not-going:active {
+          cursor: pointer;
+          transform: scale(1);
         }
         #not-going:hover::before {
           content: "😱";
         }
         #nc:hover {
           cursor: pointer;
+          transform: scale(1.1);
+        }
+        #nc:active {
+          cursor: pointer;
+          transform: scale(1);
         }
         #going:hover {
           cursor: pointer;
           animation: colorchange .5s infinite;
           border: 1px solid transparent;
+          transform: scale(1.1);
+        }
+        #going:active {
+          cursor: pointer;
+          transform: scale(1);
         }
         #going:hover::before {
           content: "";
@@ -140,12 +157,20 @@
 
 
     <!-- Buttons -->
-    
-    <audio id="mysound" src="sounds/disco.mp3"></audio>
-    <a id="going" onmouseover="document.getElementById('mysound').play()" onmouseout="document.getElementById('mysound').pause(); mysound.currentTime = 0;" href="https://goo.gl/forms/JHH46L9tFvBxQvx92"></a>
 
-    <a id="not-going"></a>
-    <a id="nc"></a>
+    <!-- Je viens -->
+    <audio id="sound1" src="sounds/going.mp3"></audio>
+    <a id="going" onmouseover="document.getElementById('sound1').play()" onmouseout="document.getElementById('sound1').pause(); sound1.currentTime = 0;" href="https://goo.gl/forms/JHH46L9tFvBxQvx92" target="blank"></a>
+
+    <!-- Je viens -->
+    <audio id="sound2" src="sounds/not-going.mp3"></audio>
+    <a id="not-going" onmouseover="document.getElementById('sound2').play()" onmouseout="document.getElementById('sound2').pause(); sound2.currentTime = 0;" href="http://m.memegen.com/nzf3bq.jpg" target="blank"></a>
+
+    <!-- Je viens -->
+    <audio id="sound3" src="sounds/nc.mp3"></audio>
+    <a id="nc" onmouseover="document.getElementById('sound3').play()" onmouseout="document.getElementById('sound3').pause(); sound3.currentTime = 0;" href="http://fr.wikihow.com/mettre-fin-%C3%A0-un-harc%C3%A8lement-virtuel" target="blank"></a>
+
+
 
 
 
