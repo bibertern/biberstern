@@ -6,6 +6,7 @@
   <title>Biberstern</title>
   <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Eczar:800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
   <link rel="icon" type="image/png" href="images/favicon.png" sizes="32x32">
   <style>
 
@@ -19,9 +20,10 @@
 
         body{
             font-size: 3vw;
-            font-family: 'Work Sans', sans-serif;
+            font-family: 'EB Garamond', serif;
             color: #132073;
             text-align: center;
+            font-weight: 400;
         }
 
         img {
@@ -44,7 +46,16 @@
           margin: 80px auto;
         }
 
-        #toggleInfos {
+        .location {
+          padding-bottom: 120px;
+        }
+
+        #toggleGo,
+        #toggleSleep,
+        #toggleEat,
+        #toggleVisit,
+        #toggleGear
+         {
           font-size: 16px;
           text-transform: uppercase;
           text-decoration: underline;
@@ -53,7 +64,11 @@
           display: block;
         }
 
-        #infos {
+        #go,
+        #sleep,
+        #eat,
+        #visit,
+        #gear {
           display: none;
           margin: 100px 0px;
         }
@@ -142,18 +157,10 @@
 <body>
 
 <div class="container">
-    <h1>Johanna & Lucas</h1>
 
-    <p>Samedi 3 février 2018<br>Portsall</p>
+    <h1>Johanna et Lucas</h1>
 
-    <a id="toggleInfos">VOIR LES INFOS</a>
-
-    <div id="infos">
-      <p>Venir</p>
-      <p>Dormir</p>
-      <p>Vomir</p>
-    </div>
-
+    <p class="location">03-02-2018<br>Portsall, Finistère Nord</p>
 
 
     <!-- Buttons -->
@@ -164,11 +171,74 @@
 
     <!-- Je viens -->
     <audio id="sound2" src="sounds/not-going.mp3"></audio>
-    <a id="not-going" onmouseover="document.getElementById('sound2').play()" onmouseout="document.getElementById('sound2').pause(); sound2.currentTime = 0;" href="http://m.memegen.com/nzf3bq.jpg" target="blank"></a>
+    <a id="not-going" onmouseover="document.getElementById('sound2').play()" onmouseout="document.getElementById('sound2').pause(); sound2.currentTime = 0;" href="farewell.html" target="blank"></a>
 
     <!-- Je viens -->
     <audio id="sound3" src="sounds/nc.mp3"></audio>
     <a id="nc" onmouseover="document.getElementById('sound3').play()" onmouseout="document.getElementById('sound3').pause(); sound3.currentTime = 0;" href="http://fr.wikihow.com/mettre-fin-%C3%A0-un-harc%C3%A8lement-virtuel" target="blank"></a>
+
+
+
+
+    <a id="toggleGo">Venir</a>
+      <div id="go">
+        Portsall, commune de Ploudalmezeau (29830).<br>
+        Brest - Portsall (30mn) <br>
+        <a href="https://www.google.fr/maps/place/Le+R%C3%A9cif/@48.5576577,-4.7029867,17z/data=!3m1!4b1!4m5!3m4!1s0x48169ebb9d5d32e3:0xbbd0f56fa4f5e244!8m2!3d48.5576542!4d-4.700798" target="blank">Voir carte</a>
+        <br>
+        Train<br>
+        Gare de Brest<br>
+        <br>
+        Avion<br>
+        Aéoroport Guipavas de Brest<br>
+        <br><br>
+        Uber<br>
+        Portsall
+        <br><br>
+        Bus (45mn)
+        <a traget="blank" href="#">Brest - Église de Portsall</a>
+      </div>
+
+    <a id="toggleSleep">Dormir</a>
+      <div id="sleep">
+        <a href="https://www.abritel.fr/results/refined/region:6666884/minSleeps/1/arrival:2018-01-31/departure:2018-02-07/page:1" target="blank">Abritel</a><br>
+        <a href="https://www.airbnb.fr/s/Portsall--Ploudalm%C3%A9zeau/homes?checkin=2018-02-02&checkout=2018-02-05&adults=1&children=0&infants=0&guests=1&source=mob&SEMKeywords=airbnb&allow_override%5B%5D=&s_tag=Uz6_6hPq" target="blank">Airbnb</a><br>
+        <a href="https://www.armor-vacances.com/recherche-avancee-de-locations.html/93875/0" target="blank">Armor vacances</a>
+      </div>
+
+    <a id="toggleEat">Se restaurer</a>
+      <div id="eat">
+        <a href="https://www.facebook.com/Lescolsdesmousses/" target="blank">Les Cols des Mousses</a><br>
+        <a href="https://www.tripadvisor.fr/Restaurant_Review-g2140836-d4261034-Reviews-Aux_Vieux_Greements-Ploudalmezeau_Finistere_Brittany.html" target="blank">Aux Vieux Gréments</a><br>
+        <a href="https://www.tripadvisor.fr/Restaurant_Review-g2140836-d2140306-Reviews-Le_Caiman-Ploudalmezeau_Finistere_Brittany.html" target="blank">Le Caiman</a><br>
+        <a href="https://www.facebook.com/Bar-LE-Recif-653797108075515/" target="blank">Le Récif</a><br>
+        <a href="https://www.tripadvisor.fr/ShowUserReviews-g2140836-d3682197-r159676795-La_Chaumine-Ploudalmezeau_Finistere_Brittany.html" target="blank">O'Doneil Irish Pub</a><br>
+        <a href="https://www.tripadvisor.fr/ShowUserReviews-g2140836-d3682197-r159676795-La_Chaumine-Ploudalmezeau_Finistere_Brittany.html" target="blank">La Chaumine</a>
+
+      </div>
+
+    <a id="toggleVisit">Se balader</a>
+      <div id="visit">
+        Pointe du Guiligui<br>
+        Route touristique<br>
+        Île de Carn<br>
+        Presqu’île St Laurent<br>
+        Aber Benoît<br>
+        Dunes de Tréompan<br>
+        Epave de l’Amoco Cadiz
+      </div>
+
+    <a id="toggleGear">S'équiper</a>
+      <div id="gear">
+        <a href="http://maree.info/82/coefficients" target="blank">Maillots de bain</a><br>
+        Cirés et Bottes
+        <br><br>
+        On fournit les parapluies,<br>
+        Si ils ne s'envolent pas, et vous avec !
+      </div>
+
+
+
 
 
 
@@ -190,8 +260,24 @@ $(document).ready( function() {
 
     // Toggle Infos
 
-    $('#toggleInfos').click(function() {
-      $('#infos').slideToggle();
+    $('#toggleGo').click(function() {
+      $('#go').slideToggle();
+    });
+
+    $('#toggleSleep').click(function() {
+      $('#sleep').slideToggle();
+    });
+
+    $('#toggleEat').click(function() {
+      $('#eat').slideToggle();
+    });
+
+    $('#toggleVisit').click(function() {
+      $('#visit').slideToggle();
+    });
+
+    $('#toggleGear').click(function() {
+      $('#gear').slideToggle();
     });
 
 
