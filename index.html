@@ -16,76 +16,72 @@
         }
         a {
           text-decoration: none;
+          color:  #132073;
+          border-bottom: 1px solid rgba(19, 32, 115, 0.4);
         }
 
-        body{
-            font-size: 3vw;
-            font-family: 'EB Garamond', serif;
-            color: #132073;
-            text-align: center;
-            font-weight: 400;
+        body {
+          font-family: 'EB Garamond', serif;
+          color: #132073;
+          text-align: center;
+          font-weight: 400;
+          -webkit-font-smoothing: antialiased;
         }
 
         img {
-            width: 130px;
-            margin: 10px 0 0 10px;
+          width: 130px;
+          margin: 10px 0 0 10px;
         }
 
-        h1  {
+        .title  {
+          font-size: 84px;
+          padding-top: 120px;
           padding-bottom: 40px;
-          font-weight: 500;
         }
-        h4 {
-            font-size: 12px;
-            font-weight: 400;
-            position: fixed;
-            bottom: 16px;
-            left: 16px;
+        .subtitle {
+          font-size: 32px;
+          margin: 40px;
+          padding-bottom: 16px;
         }
-        .container {
-          margin: 80px auto;
-        }
-
-        .location {
-          padding-bottom: 120px;
+        .separator {
+          width: 56px;
+          height: 1px;
+          margin: auto;
+          background: #132073;
+          margin: 0px auto 40px;
         }
 
-        #toggleGo,
-        #toggleSleep,
-        #toggleEat,
-        #toggleVisit,
-        #toggleGear
-         {
-          font-size: 16px;
-          text-transform: uppercase;
-          text-decoration: underline;
-          cursor: pointer;
-          margin: 70px 0;
-          display: block;
+        .cta {
+          margin-top: 64px;
         }
 
-        #go,
-        #sleep,
-        #eat,
-        #visit,
-        #gear {
-          display: none;
-          margin: 100px 0px;
+        .infos-ctn {
+          background-color: #F8F8FA;
+          margin-top: 120px;
+          padding: 40px 0 100px;
         }
+        .nc {
+          font-size: 12px;
+          font-weight: 400;
+          position: fixed;
+          bottom: 16px;
+          left: 16px;
+        }
+
+
 
         #going, #not-going, #nc {
           display: block;
           width: 320px;
-          height: 64px;
+          height: 60px;
           border: 2px solid #132073;
           color: #132073;
-          font-size: 26px;
+          font-size: 32px;
           text-align: center;
           line-height: 64px;
           margin: auto;
-          margin-bottom: 16px;
+          margin-bottom: 24px;
           transition: 0.350s cubic-bezier(0.175, 1, 0.50, 1.275);
-          border-radius: 4px;
         }
 
         #going::before {
@@ -106,7 +102,12 @@
           transform: scale(1);
         }
         #not-going:hover::before {
-          content: "😱";
+          content: "";
+          width: 50px;
+          height: 60px;
+          background:url("images/nc.png") no-repeat 0 7px ;
+          background-size: 100%;
+          display: inline-block;
         }
         #nc:hover {
           cursor: pointer;
@@ -130,7 +131,7 @@
           content: "";
           width: 50px;
           height: 60px;
-          background:url("images/disco.gif") no-repeat 0 10px ;
+          background:url("images/disco.gif") no-repeat 0 7px ;
           background-size: 100%;
           display: inline-block;
         }
@@ -150,139 +151,182 @@
           100%   {background: #FD6A6B;}
         }
 
+        button.accordion {
+            font-family: 'EB Garamond', serif;
+            background-color: #F8F8FA;
+            color: #132073;
+            cursor: pointer;
+            height: 64px;
+            width: 100%;
+            border: none;
+            text-align: center;
+            outline: none;
+            font-size: 32px;
+            transition: 0.2s;
+        }
+
+        button.accordion:hover {
+          opacity: 0.7;
+        }
+
+        div.panel {
+            padding: 0 18px;
+            font-size: 24px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+        }
+
+        div.panel a:hover {
+          opacity: 0.7;
+        }
+
+        div.panel p {
+          line-height: 28px;
+        }
+
+
+
+
     </style>
 
 </head>
 
 <body>
 
-<div class="container">
+  <div class="wrapper">
 
-    <h1>Johanna et Lucas</h1>
+    <!-- Header -->
+    <p class="title">Johanna et Lucas</p>
+    <p class="subtitle">03-02-2018<br>Portsall, Finistère Nord</p>
+    <div class="separator"></div>
 
-    <p class="location">03-02-2018<br>Portsall, Finistère Nord</p>
+    <div class="cta">
+      <!-- CTA -->
+      <audio id="sound1" loop src="sounds/going.mp3"></audio>
+      <a id="going" onmouseover="document.getElementById('sound1').play();" onmouseout="document.getElementById('sound1').pause(); sound1.currentTime = 0;" href="https://goo.gl/forms/JHH46L9tFvBxQvx92" target="blank"></a>
 
+      <audio id="sound2" src="sounds/not-going.mp3"></audio>
+      <a id="not-going" onmouseover="document.getElementById('sound2').play()" onmouseout="document.getElementById('sound2').pause(); sound2.currentTime = 0;" href="farewell.html" target="blank"></a>
 
-    <!-- Buttons -->
-
-    <!-- Je viens -->
-    <audio id="sound1" loop src="sounds/going.mp3"></audio>
-    <a id="going" onmouseover="document.getElementById('sound1').play();" onmouseout="document.getElementById('sound1').pause(); sound1.currentTime = 0;" href="https://goo.gl/forms/JHH46L9tFvBxQvx92" target="blank"></a>
-
-    <!-- Je viens -->
-    <audio id="sound2" src="sounds/not-going.mp3"></audio>
-    <a id="not-going" onmouseover="document.getElementById('sound2').play()" onmouseout="document.getElementById('sound2').pause(); sound2.currentTime = 0;" href="farewell.html" target="blank"></a>
-
-    <!-- Je viens -->
-    <audio id="sound3" src="sounds/nc.mp3"></audio>
-    <a id="nc" onmouseover="document.getElementById('sound3').play()" onmouseout="document.getElementById('sound3').pause(); sound3.currentTime = 0;" href="http://fr.wikihow.com/mettre-fin-%C3%A0-un-harc%C3%A8lement-virtuel" target="blank"></a>
-
+      <audio id="sound3" src="sounds/nc.mp3"></audio>
+      <a id="nc" onmouseover="document.getElementById('sound3').play()" onmouseout="document.getElementById('sound3').pause(); sound3.currentTime = 0;" href="http://fr.wikihow.com/mettre-fin-%C3%A0-un-harc%C3%A8lement-virtuel" target="blank"></a>
+    </div>
+  </div>
 
 
+  <div class="infos-ctn">
+    <div class="wrapper">
 
-    <a id="toggleGo">Venir</a>
-      <div id="go">
-        Portsall, commune de Ploudalmezeau (29830).<br>
-        Brest - Portsall (30mn) <br>
-        <a href="https://www.google.fr/maps/place/Le+R%C3%A9cif/@48.5576577,-4.7029867,17z/data=!3m1!4b1!4m5!3m4!1s0x48169ebb9d5d32e3:0xbbd0f56fa4f5e244!8m2!3d48.5576542!4d-4.700798" target="blank">Voir carte</a>
-        <br>
-        Train<br>
-        Gare de Brest<br>
-        <br>
-        Avion<br>
-        Aéoroport Guipavas de Brest<br>
-        <br><br>
-        Uber<br>
-        Portsall
-        <br><br>
-        Bus (45mn)
-        <a traget="blank" href="#">Brest - Église de Portsall</a>
+      <!-- Infos -->
+      <button class="accordion">Venir</button>
+      <div class="panel">
+        <div class="separator"></div>
+        <p>
+          Portsall, commune de Ploudalmezeau (29830).<br>
+          Brest - Portsall (30mn) <br>
+          <a href="http://bit.ly/2xSPose" target="blank">Voir carte</a>
+          <br><br>
+          Train<br>
+          Gare de Brest<br>
+          <br>
+          Avion<br>
+          Aéoroport Guipavas de Brest<br>
+          <br><br>
+          Uber<br>
+          Portsall
+          <br><br>
+          Bus (45mn)
+          <a traget="blank" href="#">Brest - Église de Portsall</a>
+          <br><br><br><br>
+        </p>
       </div>
 
-    <a id="toggleSleep">Dormir</a>
-      <div id="sleep">
-        <a href="https://www.abritel.fr/results/refined/region:6666884/minSleeps/1/arrival:2018-01-31/departure:2018-02-07/page:1" target="blank">Abritel</a><br>
-        <a href="https://www.airbnb.fr/s/Portsall--Ploudalm%C3%A9zeau/homes?checkin=2018-02-02&checkout=2018-02-05&adults=1&children=0&infants=0&guests=1&source=mob&SEMKeywords=airbnb&allow_override%5B%5D=&s_tag=Uz6_6hPq" target="blank">Airbnb</a><br>
-        <a href="https://www.armor-vacances.com/recherche-avancee-de-locations.html/93875/0" target="blank">Armor vacances</a>
+      <button class="accordion">Dormir</button>
+      <div class="panel">
+        <div class="separator"></div>
+        <p>
+          <a href="http://bit.ly/2xVshy3" target="blank">Abritel</a><br>
+          <a href="http://bit.ly/2gRL3yu" target="blank">Airbnb</a><br>
+          <a href="http://bit.ly/2gRUwG6" target="blank">Armor vacances</a>
+          <br><br><br><br>
+        </p>
       </div>
 
-    <a id="toggleEat">Se restaurer</a>
-      <div id="eat">
-        <a href="https://www.facebook.com/Lescolsdesmousses/" target="blank">Les Cols des Mousses</a><br>
-        <a href="https://www.tripadvisor.fr/Restaurant_Review-g2140836-d4261034-Reviews-Aux_Vieux_Greements-Ploudalmezeau_Finistere_Brittany.html" target="blank">Aux Vieux Gréments</a><br>
-        <a href="https://www.tripadvisor.fr/Restaurant_Review-g2140836-d2140306-Reviews-Le_Caiman-Ploudalmezeau_Finistere_Brittany.html" target="blank">Le Caiman</a><br>
-        <a href="https://www.facebook.com/Bar-LE-Recif-653797108075515/" target="blank">Le Récif</a><br>
-        <a href="https://www.tripadvisor.fr/ShowUserReviews-g2140836-d3682197-r159676795-La_Chaumine-Ploudalmezeau_Finistere_Brittany.html" target="blank">O'Doneil Irish Pub</a><br>
-        <a href="https://www.tripadvisor.fr/ShowUserReviews-g2140836-d3682197-r159676795-La_Chaumine-Ploudalmezeau_Finistere_Brittany.html" target="blank">La Chaumine</a>
-
+      <button class="accordion">Se restaurer</button>
+      <div class="panel">
+        <div class="separator"></div>
+        <p>
+          <a href="http://bit.ly/2vMlWU5" target="blank">Les Cols des Mousses</a><br>
+          <a href="http://bit.ly/2wR2AP5" target="blank">Aux Vieux Gréements</a><br>
+          <a href="http://bit.ly/2gTuDJO" target="blank">Le Caiman</a><br>
+          <a href="http://bit.ly/2gSIFv9" target="blank">Le Récif</a><br>
+          <a href="http://bit.ly/2eUJP8A" target="blank">O'Donneil Irish Pub</a><br>
+          <a href="http://bit.ly/2jbdLih" target="blank">La Chaumine</a>
+          <br><br><br><br>
+        </p>
       </div>
 
-    <a id="toggleVisit">Se balader</a>
-      <div id="visit">
-        Pointe du Guiligui<br>
-        Route touristique<br>
-        Île de Carn<br>
-        Presqu’île St Laurent<br>
-        Aber Benoît<br>
-        Dunes de Tréompan<br>
-        Epave de l’Amoco Cadiz
+      <button class="accordion">Se ballader</button>
+      <div class="panel">
+        <div class="separator"></div>
+        <p>
+          Pointe du Guiligui<br>
+          Route touristique<br>
+          Île de Carn<br>
+          Presqu’île St Laurent<br>
+          Aber Benoît<br>
+          Dunes de Tréompan<br>
+          Epave de l’Amoco Cadiz
+          <br><br><br><br>
+        </p>
       </div>
 
-    <a id="toggleGear">S'équiper</a>
-      <div id="gear">
-        <a href="http://maree.info/82/coefficients" target="blank">Maillots de bain</a><br>
-        Cirés et Bottes
-        <br><br>
-        On fournit les parapluies,<br>
-        Si ils ne s'envolent pas, et vous avec !
+      <button class="accordion">S'équiper</button>
+      <div class="panel">
+        <div class="separator"></div>
+        <p>
+          <a href="http://maree.info/82/coefficients" target="blank">Maillots de bain</a><br>
+          Cirés et Bottes
+          <br><br>
+          On fournit les parapluies,<br>
+          Si ils ne s'envolent pas, et vous avec !
+          <br><br><br><br>
+        </p>
       </div>
 
+    </div>
+  </div>
+
+  <span class="nc">* Non concerné.é</span>
 
 
 
-
-
-
-
-
-    <h4>* Non concerné.é</h4>
-</div>
-
-<div id="wrap">&nbsp;</div>
 
 </body>
 
 
 <script src="js/jquery-3.1.1.min.js"></script>
-
 <script type="text/javascript">
-$(document).ready( function() {
 
-    // Toggle Infos
+  var acc = document.getElementsByClassName("accordion");
+  var i;
 
-    $('#toggleGo').click(function() {
-      $('#go').slideToggle();
-    });
+  for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight){
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    }
+  }
 
-    $('#toggleSleep').click(function() {
-      $('#sleep').slideToggle();
-    });
-
-    $('#toggleEat').click(function() {
-      $('#eat').slideToggle();
-    });
-
-    $('#toggleVisit').click(function() {
-      $('#visit').slideToggle();
-    });
-
-    $('#toggleGear').click(function() {
-      $('#gear').slideToggle();
-    });
-
-
-
-});
 </script>
+
+
+
 
 </html>
